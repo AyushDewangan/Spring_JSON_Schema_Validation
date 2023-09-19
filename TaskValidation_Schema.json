@@ -1,21 +1,31 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema#",
   "type": "object",
+  "title": "Task",
+  "description": "Task Details",
+  "additionalProperties": true,
+  "required":["taskId", "description", "assognee"],
   "properties": {
     "taskId": {
-      "type": "string"
+      "type": "string",
+      "description": "Task Id"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "Description of Task",
+      "maxLength": 10
     },
     "severity": {
-      "type": "integer"
+      "type": "integer",
+      "description": "Task Severity"
     },
     "assignee": {
-      "type": "string"
+      "type":["string", "null"],
+      "description": "Task Assignee"
     },
     "storyPoint": {
-      "type": "integer"
+      "type": "integer",
+      "description": "Task Story Point"
     }
   },
   "required": ["taskId", "description", "severity", "assignee", "storyPoint"]
